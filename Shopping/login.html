@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Shopping Us</title>
+    <link rel="icon" type="image/png" href="./img/Logoshop.png">
+    <link rel="stylesheet" href="./assets/css/animate.min.css">
+    <link rel="stylesheet" href="./assets/css/tailwind.min.css">
+    <link rel="stylesheet" href="./assets/css/fontawesome.min.css">
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script src="./bootstrap.min.js"></script>
+    <link rel='stylesheet' href='./assets/css/footer.css' />
+    <link rel='stylesheet' href='./assets/css/header.css' />
+    <link rel='stylesheet' href='./assets/css/home.css' />
+    <link rel='stylesheet' href='./assets/css/navbar.css' />
+    <link rel='stylesheet' href='./assets/css/modal.css' />
+    <link rel="stylesheet" href="./assets/css/login.css">
+    <link rel="stylesheet" href="./assets/css/login-navbar.css">
+</head>
+
+<body>
+    <!---Navigation bar--->
+    <header class="header">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a class="logo">
+                <img class="logo-img" src="./img/logo-cart.png" alt="Logo" />
+                <span class="logo-text">Shopping Us</span>
+            </a>
+            <nav class="nav-items flex">
+                <a href="index.html">Home</a>
+                <a href="login.html">Login</a>
+                <a href="">Sign Up</a>
+                <a href="">Admin</a>
+            </nav>
+        </div>
+    </header>
+
+    <form action="" method="POST" class="text-gray-700 body-font" id="login">
+        <div class="container login-page-container px-5 py-24 mx-auto flex flex-wrap items-center">
+            <div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
+                <h1 class="title-font font-medium text-3xl text-gray-900">
+                    <img src="./img/sign-up.png" alt="" width="85%">
+                </h1>
+            </div>
+            <div
+                class="login-card lg:w-2/6 md:w-1/2 bg-gray-200 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
+                <h2 class="text-gray-900 text-lg font-medium title-font mb-5">
+                    Customer Login
+                </h2>
+
+                <i id="mail" class="fa fa-envelope"></i>
+                <input
+                    class="bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-10 py-2 mb-4"
+                    placeholder="Email" pattern="[a-z0-9_-]+@[a-z0-9_-]+\.[a-z]{2,4}$" title="xxx@ppp.yyy"
+                    id="custEmail" required type="email" name="custEmail">
+
+                <span class="hide1" onclick="togglePass()">
+                    <i id="hide1" class="fa-solid fa-eye-slash"></i>
+                    <i id="hide2" class="fa-solid fa-eye"></i>
+                </span>
+
+                <i id="pass" class="fa fa-key"></i>
+                <input
+                    class="bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-10 py-2 mb-4"
+                    placeholder="Password" id="custPass" minlength="8" name="custPassword" required type="password">
+
+                <button type="submit"
+                    class="submit text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                    Login
+                </button>
+                <br><br>
+                <h3><span>or</span></h3>
+                <br><br>
+
+                <button type="submit"
+                    class="button1 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-800 rounded text-lg">
+                    <i class="fa-brands fa-google"></i>Login With Google
+                </button>
+
+                <button type="submit"
+                    class="button2 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-900 rounded text-lg">
+                    <i class="fa-brands fa-facebook"> </i>Login With Facebook
+                </button>
+                <button type="submit"
+                    class="button3 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">
+                    <i class="fa-brands fa-twitter"></i> Login With Twitter
+                </button>
+                <button type="submit"
+                    class="button4 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-800 rounded text-lg">
+                    <i class="fa-brands fa-linkedin"></i> Login With Linkedin
+                </button>
+
+            </div>
+        </div>
+    </form>
+
+
+    <!--Footer-->
+    <footer class="text-gray-700 body-font" style="position: fixed;bottom: 0;width:100vw;">
+        <div class="bg-gray-200">
+            <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+                <p class="text-gray-500 text-sm text-center sm:text-left">&copy; 2023 Shopping Us
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function togglePass() {
+            var x = document.getElementById("custPass");
+            var y = document.getElementById("hide1");
+            var z = document.getElementById("hide2");
+    
+            if (x.type === 'password') {
+                x.type = "text";
+                y.style.display = "none";
+                z.style.display = "block";
+            } else {
+                x.type = "password";
+                y.style.display = "block";
+                z.style.display = "none";
+            }
+        }
+    
+        if (localStorage.getItem("loggedCustomer")) {
+            location.replace("With%20PHP/customerProductView.html");
+        }
+    </script>
+</body>
+
+</html>
